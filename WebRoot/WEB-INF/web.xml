@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="3.0" xmlns="http://java.sun.com/xml/ns/javaee"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd">
+
+	<filter>
+		<filter-name>CharacterEncodingFilter</filter-name>
+		<filter-class>web.filter.CharacterEncodingFilter</filter-class>
+		<init-param>
+			<param-name>charset</param-name>
+			<param-value>GBK</param-value>
+		</init-param>
+	</filter>
+
+	<filter-mapping>
+		<filter-name>CharacterEncodingFilter</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+
+	<servlet>
+		<description>This is the description of my J2EE component</description>
+		<display-name>This is the display name of my J2EE component</display-name>
+		<servlet-name>MetaDataM8367</servlet-name>
+		<servlet-class>web.MetaData</servlet-class>
+		<init-param>
+			<param-name>tempPath</param-name>
+			<param-value>/WEB-INF/temp</param-value>
+		</init-param>
+		<!--设置可跨域调用的响应头 	1为可跨域   非1为不可跨域-->
+		<init-param>
+			<param-name>allowOrigin</param-name>
+			<param-value>1</param-value>
+		</init-param>
+		<!--单位为b，输入正整数，如大小设置为100KB时输入102400（1024*100）-->
+		<!--缓冲区大小-->
+		<init-param>
+			<param-name>sizeThreshold</param-name>
+			<param-value>102400</param-value>
+		</init-param>
+		<!--单个文件最大值-->
+		<init-param>
+			<param-name>fileSizeMax</param-name>
+			<param-value>2097152</param-value>
+		</init-param>
+		<!--总文件最大值-->
+		<init-param>
+			<param-name>sizeMax</param-name>
+			<param-value>10485760</param-value>
+		</init-param>
+		<!--存放非加密sql语句的数据库表名-->
+		<init-param>
+			<param-name>sqlTable</param-name>
+			<param-value>META836</param-value>
+		</init-param>
+		<!--存放非加密sql语句的数据库字段名-->
+		<init-param>
+			<param-name>sqlName</param-name>
+			<param-value>PLSQL</param-value>
+		</init-param>
+		<!-- blob上传下载编码 -->
+		<init-param>
+			<param-name>charset</param-name>
+			<param-value>GBK</param-value>
+		</init-param>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>MetaDataM8367</servlet-name>
+		<url-pattern>/sc/metadatam/MetaDataM8367</url-pattern>
+	</servlet-mapping>
+
+</web-app>

@@ -1,25 +1,14 @@
 package dao;
 
-import java.io.InputStream;
 import java.sql.SQLException;
 import java.util.Map;
 
-import dao.bean.Tables;
 import dao.exception.JdbcRuntimeException;
 
 
 public interface DataAccessObjects {
 	
 	public static final String SUCCESS_MESSAGE = "操作成功 ！	-version 332";
-	/**
-	 * 获取某用户下的表
-	 * @param userName 用户名
-	 * @param pageSize 分页大小
-	 * @param pageIndex 被查询页的页码
-	 * @return 返回json型数据
-	 * @throws JdbcRuntimeException 缺少条件，查询错误，查询无结果会报错
-	 */
-	public String query(String userName,String pageSize,String pageIndex) throws SQLException;
 	/**
 	 * 查询某条记录的某个属性
 	 * @param tableName 表名
@@ -37,14 +26,14 @@ public interface DataAccessObjects {
 	 * @param keyword 查询所需的<关键字属性名，关键字值>
 	 * @return true:成功	false:失败
 	 */
-	public boolean update(String tableName,Map<String,Object> properties,Map<String,Object> keyword) throws JdbcRuntimeException, SQLException;
+//	public boolean update(String tableName,Map<String,Object> properties,Map<String,Object> keyword) throws JdbcRuntimeException, SQLException;
 	/**
 	 * 增加一条记录
 	 * @param tableName 表名
 	 * @param record 记录<属性名，值>
 	 * @return true:成功	false:失败
 	 */
-	public boolean add(String tableName,Map<String,Object> record) throws JdbcRuntimeException, SQLException;
+//	public boolean add(String tableName,Map<String,Object> record) throws JdbcRuntimeException, SQLException;
 	/**
 	 * 文件读取
 	 * @param tableName	文件所在表名
@@ -53,7 +42,7 @@ public interface DataAccessObjects {
 	 * @return 输出流
 	 * @throws SQLException 
 	 */
-	public InputStream FileRead(String tableName,Map<String,Object> keyword,String propertyName) throws JdbcRuntimeException, SQLException;
+//	public InputStream FileRead(String tableName,Map<String,Object> keyword,String propertyName) throws JdbcRuntimeException, SQLException;
 	/**
 	 * sql查询语句执行
 	 * @param sql sql语句
@@ -73,10 +62,4 @@ public interface DataAccessObjects {
 	 * @throws SQLException 
 	 */
 	public String excuteSql(String sql,String[] values) throws SQLException;
-	/**
-	 * 查询表结构方法
-	 * @param tableName 表名：【0】表空间	【1】表名
-	 * @return 数据对象
-	 */
-	public Tables describeTable(String[] tableName);
 }

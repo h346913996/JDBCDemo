@@ -22,7 +22,7 @@ public class DaoUtil {
 		if (values != null) {
 			for (int i = 0, len = values.length; i < len; i++) {
 				sql = sql.replaceAll("\\{[" + i + "]\\}",
-						"fb7a0b12-6fcf-44db-8ccb-5e36693b0401" + i);
+						"fb7a0b12-6fcf-44db-8ccb-5e36693b0401" + i);//防止替换掉参数中带有的｛number｝
 			}
 			sql = sql.replaceAll("\\{[0-9]*\\}", "");
 			for (int i = 0, len = values.length; i < len; i++) {

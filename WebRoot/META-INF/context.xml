@@ -41,7 +41,7 @@
 
 	driverClassName="org.postgresql.Driver"
 
-	maxIdle="500"
+	maxIdle="250"
 
 	maxWait="5000"
 
@@ -51,6 +51,6 @@
 
 	url="jdbc:postgresql://localhost:5432/DB_TEST1"
 	
-	maxActive="10000"/>
+	maxActive="1000"/>
 
 </Context>

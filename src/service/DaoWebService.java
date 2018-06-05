@@ -1,10 +1,10 @@
 package service;
 
 import dao.DataAccessObjects;
-import dao.impl.OracleDAO;
+import dao.impl.PostgreSqlDAO;
 
 public class DaoWebService {
 	public static DataAccessObjects getDao(){
-		return new OracleDAO();
+		return new PostgreSqlDAO();
 	}
 }
